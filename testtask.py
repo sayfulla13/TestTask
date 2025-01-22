@@ -1,30 +1,19 @@
 def BlackAndWhite(n,k,line):
-    black = 0
-    white = 0
-
     results = []
-    for i in line:
-        if black == k:
-            return black
-        elif i=="B":
-            black+=1
-        else:
-            white +=1
-        if black + white == k:
-            results.append(white)
-            black = white = 0
-    
-    black = 0
-    white = 0   
-    for i in line[::-1]:
-        if i=="B":
-            black+=1
-        else:
-            white +=1
-        if black + white == k:
-            results.append(white)
-            black = white = 0   
-
+    for i in range(0,len(line)-1):
+        black = 0
+        white = 0
+        for i in line[i:]:
+            if black == k:
+                return black
+            elif i=="B":
+                black+=1
+            else:
+                white +=1
+            if black + white == k:
+                results.append(white)
+                black = white = 0
+ 
     return min(results)
 
 try:
@@ -51,4 +40,4 @@ while t > 0:
 
     print(BlackAndWhite(n,k,WB.upper()))
 
-    t -=1
+    t -=11
