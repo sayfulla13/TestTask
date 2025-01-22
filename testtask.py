@@ -40,4 +40,4 @@ while t > 0:
 
     print(BlackAndWhite(n,k,WB.upper()))
 
-    t -=11
+    t -=1
